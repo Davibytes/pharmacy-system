@@ -9,7 +9,7 @@ const getApiBaseUrl = () => {
   }
 
   if (Platform.OS === 'web') {
-    return 'http://localhost:5000/api';
+    return 'https://api.pharmacyfinder247.site/api';
   }
 
   const hostUri =
@@ -20,7 +20,7 @@ const getApiBaseUrl = () => {
     Constants.expoGoConfig?.debuggerHost;
   const host = hostUri?.split(':')[0];
 
-  return `http://${host || 'localhost'}:5000/api`;
+  return 'https://api.pharmacyfinder247.site/api';
 };
 
 export const API_BASE_URL = getApiBaseUrl();
