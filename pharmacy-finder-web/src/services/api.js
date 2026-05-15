@@ -1,4 +1,5 @@
-export const API_BASE = process.env.REACT_APP_API_BASE_URL || 'http://localhost:5000/api';
+export const API_BASE =
+  process.env.REACT_APP_API_BASE_URL || 'https://api.pharmacyfinder247.site/api';
 
 export const pharmacyAPI = {
   getAll: async (token) => {

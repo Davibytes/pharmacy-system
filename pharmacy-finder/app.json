@@ -23,18 +23,26 @@
     "android": {
       "permissions": [
         "ACCESS_COARSE_LOCATION",
+        "ACCESS_FINE_LOCATION",
+        "ACCESS_COARSE_LOCATION",
         "ACCESS_FINE_LOCATION"
       ],
       "adaptiveIcon": {
         "foregroundImage": "./assets/images/logo-nobk.jpeg",
         "backgroundColor": "#FBF9F1"
-      }
+      },
+      "package": "com.davinci.vi26.pharmacyfinder"
     },
     "web": {
       "favicon": "./assets/images/logo-nobk.jpeg"
     },
     "plugins": [
       "expo-font"
-    ]
+    ],
+    "extra": {
+      "eas": {
+        "projectId": "1a4b86cf-5178-48eb-9f90-44423f400efe"
+      }
+    }
   }
 }

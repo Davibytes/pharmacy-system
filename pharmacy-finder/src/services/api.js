@@ -1,29 +1,7 @@
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import axios from 'axios';
-import Constants from 'expo-constants';
-import { Platform } from 'react-native';
 
-const getApiBaseUrl = () => {
-  if (process.env.EXPO_PUBLIC_API_BASE_URL) {
-    return process.env.EXPO_PUBLIC_API_BASE_URL;
-  }
-
-  if (Platform.OS === 'web') {
-    return 'https://api.pharmacyfinder247.site/api';
-  }
-
-  const hostUri =
-    Constants.expoConfig?.hostUri ||
-    Constants.manifest?.hostUri ||
-    Constants.manifest2?.extra?.expoClient?.hostUri ||
-    Constants.manifest?.debuggerHost ||
-    Constants.expoGoConfig?.debuggerHost;
-  const host = hostUri?.split(':')[0];
-
-  return 'https://api.pharmacyfinder247.site/api';
-};
-
-export const API_BASE_URL = getApiBaseUrl();
+export const API_BASE_URL = 'https://api.pharmacyfinder247.site';
 
 const getPharmaciesFromResponse = (data) => {
   if (Array.isArray(data)) {
