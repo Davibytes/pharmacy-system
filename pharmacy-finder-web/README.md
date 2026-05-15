@@ -1,66 +1,94 @@
-# Pharmacy Finder - Web Admin Panel
+# Pharmacy Finder Web Admin
 
-A React-based web application for pharmacy managers to manage inventory, process orders, and view business analytics in real-time.
+React web dashboard for pharmacy users in the Pharmacy System platform.
 
-## 🎯 Features
+## Features
 
-- **Pharmacy Authentication** - Secure login/signup with JWT
-- **Real-time Dashboard** - View daily stats (orders, revenue, medicines)
-- **Inventory Management** - Add, edit, delete medicines with details
-- **Order Management** - View customer orders and update status
-- **Pharmacy Profile** - Manage pharmacy details and opening hours
-- **Opening Hours** - Set daily operating hours and days
-- **Analytics** - Track sales, low stock alerts, and customer orders
-- **Responsive Design** - Works on desktop, tablet, and mobile browsers
+- Pharmacy user signup and login
+- Protected dashboard routes
+- Pharmacy profile management
+- Inventory page
+- Orders page
+- Password reset pages
+- Shared API service for backend communication
 
-## 💻 Tech Stack
+## Tech Stack
 
-- **Framework**: React 18
-- **Routing**: React Router v6
-- **Styling**: Tailwind CSS v3
-- **State Management**: Context API
-- **Authentication**: JWT + localStorage
-- **HTTP Client**: Fetch API
-- **Build Tool**: Create React App
+- React 18
+- React Router
+- Tailwind CSS
+- Create React App
+- Fetch API
 
-## 🚀 Getting Started
+## Requirements
 
-### Prerequisites
+- Node.js 18 or newer
+- npm
+- Running backend API from `../pharmacy-finder-backend`
 
-```bash
-node --version  # v18+
-npm --version   # v8+
-```
-
-### Installation
+## Setup
 
 ```bash
-# Clone repository
-git clone https://github.com/Davibytes/pharmacy-finder-web.git
-cd pharmacy-finder-web
-
-# Install dependencies
 npm install
-
-# Install Tailwind CSS (if not already done)
-npm install -D tailwindcss@3 postcss autoprefixer
-npx tailwindcss init -p
 ```
 
-### Running Development Server
+## Run Locally
 
 ```bash
 npm start
 ```
 
-App runs on: `http://localhost:3000`
+Default URL:
 
-### Building for Production
+```text
+http://localhost:3000
+```
+
+## API Configuration
+
+The API service is in:
+
+```text
+src/services/api.js
+```
+
+By default it uses:
+
+```text
+http://localhost:5000/api
+```
+
+For production, create an environment file or set:
+
+```bash
+REACT_APP_API_BASE_URL=https://api.yourdomain.com/api
+```
+
+Restart the dev server after changing environment variables.
+
+## Useful Scripts
+
+```bash
+npm start      # Start development server
+npm run build  # Create production build in build/
+npm test       # Run tests
+```
+
+## Main Folders
+
+```text
+src/components/   Reusable UI and route guard components
+src/context/      Authentication context
+src/pages/        Dashboard, auth, pharmacy, inventory, orders, and profile pages
+src/services/     API service helpers
+public/           Static public assets
+build/            Production output after npm run build
+```
+
+## Production Build
 
 ```bash
 npm run build
 ```
 
-Output: `build/` folder ready for deployment
-
-## 📂 Project Structure
+Deploy the generated `build/` folder with Nginx, Hostinger, Netlify, Vercel, or another static hosting provider. When using Nginx with React Router, configure all unknown routes to return `index.html`.

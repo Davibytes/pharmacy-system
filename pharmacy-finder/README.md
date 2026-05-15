@@ -1,84 +1,96 @@
-# Pharmacy Finder - Mobile App
+# Pharmacy Finder Mobile App
 
-A React Native mobile application that helps customers find nearby pharmacies, check medicines availability, and place orders in real-time.
+Expo React Native mobile app for customers using the Pharmacy System platform.
 
-## 🎯 Features
+## Features
 
-- **Customer Authentication** - Secure login/signup with JWT
-- **Nearby Pharmacies Search** - Find pharmacies within 10km radius using GPS
-- **Interactive Map** - View pharmacies on map with real-time locations
-- **Pharmacy Details** - View pharmacy information, opening hours, and operating days
-- **Medicine Search** - Search medicines by name and pharmacy
-- **Order Placement** - Place and track medicine orders
-- **User Profile** - Manage user account and preferences
-- **Push Notifications** - Real-time order updates (optional)
+- Customer signup and login
+- Pharmacy signup and login flows
+- Nearby pharmacy discovery using device location
+- Medicine search across pharmacies
+- Pharmacy details, opening status, and reviews
+- Customer profile screen
+- Admin and super admin navigation screens
+- Shared API client with JWT authentication
 
-## 📱 Tech Stack
+## Tech Stack
 
-- **Framework**: React Native with Expo
-- **Navigation**: React Navigation (Stack + Bottom Tabs)
-- **State Management**: Context API
-- **Authentication**: JWT + AsyncStorage
-- **Maps**: React Native Maps
-- **Location**: Expo Location API
-- **Styling**: StyleSheet (Native)
-- **Backend**: Node.js + Express + MongoDB
+- Expo
+- React Native
+- React Navigation
+- Axios
+- AsyncStorage
+- Expo Location
+- React Native Maps
 
-## 🚀 Getting Started
+## Requirements
 
-### Prerequisites
+- Node.js 18 or newer
+- npm
+- Expo CLI through `npx expo`
+- Running backend API from `../pharmacy-finder-backend`
 
-```bash
-npm install -g expo-cli
-node --version  # v18+
-npm --version   # v8+
-```
-
-### Installation
+## Setup
 
 ```bash
-# Clone repository
-git clone https://github.com/Davibytes/pharmacy-finder.git
-cd pharmacy-finder
-
-# Install dependencies
 npm install
-
-# Install additional Expo packages
-npx expo install expo-location
-npx expo install expo-constants
 ```
 
-### Running the App
+## Run Locally
 
 ```bash
-# Start Expo development server
 npm start
-
-# For iOS (Mac only)
-# Press 'i'
-
-# For Android
-# Press 'a'
-
-# For Web
-# Press 'w'
 ```
 
-### Environment Setup
+Then choose one of the Expo options:
 
-No `.env` file needed for mobile. API endpoint is configured in `src/services/api.js`.
+- Press `a` for Android
+- Press `i` for iOS on macOS
+- Press `w` for web
+- Scan the QR code with Expo Go on a physical device
 
-**For Development (localhost):**
-```javascript
-const API_BASE_URL = 'http://localhost:5000';
+## API Configuration
+
+The API client is in:
+
+```text
+src/services/api.js
 ```
 
-**For Production (Live API):**
-```javascript
-const API_BASE_URL = 'https://api.YOUR_DOMAIN';
+By default:
+
+- Web uses `http://localhost:5000/api`
+- Native devices try to use the Expo development host IP with port `5000`
+
+For production or a specific backend URL, set:
+
+```bash
+EXPO_PUBLIC_API_BASE_URL=https://api.yourdomain.com/api
 ```
 
-Then rebuild APK after changing.
+## Useful Scripts
 
-## 📂 Project Structure
+```bash
+npm start       # Start Expo
+npm run android # Start Expo for Android
+npm run ios     # Start Expo for iOS
+npm run web     # Start Expo for web
+npm run lint    # Run Expo lint
+```
+
+## Main Folders
+
+```text
+src/components/   Reusable UI components
+src/context/      Auth and app context providers
+src/navigation/   Root, customer, admin, and super admin navigation
+src/screens/      App screens grouped by user area
+src/services/     API client
+src/styles/       Shared colors, spacing, typography, and component styles
+src/utils/        Utility helpers
+assets/           Static app assets
+```
+
+## Notes
+
+Keep the backend running before testing login, signup, pharmacy search, or medicine search. If testing on a physical phone, the phone and development computer should be on the same network.
