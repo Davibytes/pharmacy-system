@@ -1,0 +1,40 @@
+{
+  "expo": {
+    "name": "Pharmacy Finder",
+    "slug": "pharmacy-finder",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/images/logo-nobk.jpeg",
+    "splash": {
+      "image": "./assets/images/logo-nobk.jpeg",
+      "resizeMode": "contain",
+      "backgroundColor": "#FBF9F1"
+    },
+    "userInterfaceStyle": "light",
+    "assetBundlePatterns": [
+      "**/*"
+    ],
+    "ios": {
+      "supportsTabletMode": true,
+      "infoPlist": {
+        "NSLocationWhenInUseUsageDescription": "Pharmacy Finder uses your location to show nearby pharmacies on search results and maps."
+      }
+    },
+    "android": {
+      "permissions": [
+        "ACCESS_COARSE_LOCATION",
+        "ACCESS_FINE_LOCATION"
+      ],
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/images/logo-nobk.jpeg",
+        "backgroundColor": "#FBF9F1"
+      }
+    },
+    "web": {
+      "favicon": "./assets/images/logo-nobk.jpeg"
+    },
+    "plugins": [
+      "expo-font"
+    ]
+  }
+}
